@@ -1,14 +1,13 @@
+
 <mat-toolbar class="mat-elevation-z8">
-    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-        <mat-icon *ngIf="!sidenav.opened"> menu </mat-icon>
-        <mat-icon *ngIf="sidenav.opened"> close </mat-icon>
-    </button>
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     Pergamum Data Contract Manager
 </mat-toolbar>
 
 
-<mat-sidenav-container>
-    <mat-sidenav opened mode="side" #sidenav="matSidenav" class="mat-elevation-z8">
+<mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav opened [mode]="mobileQuery.matches ? 'over' : 'side'"
+    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" #sidenav="matSidenav" class="mat-elevation-z8">
         <button mat-button class="menu-button" routerLink="/home">
             <mat-icon>home</mat-icon>
             <span>Home</span>
