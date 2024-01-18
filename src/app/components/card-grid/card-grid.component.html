@@ -1,1 +1,4 @@
-<p>card-grid works!</p>
+<mat-grid-list cols="4" rowHeight="4:4">
+    <h1>{{objectContract.length}}</h1>
+    <app-card-content *ngFor="let contract of objectContract" [contract1]="contract"></app-card-content>
+</mat-grid-list>

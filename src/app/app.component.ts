@@ -6,15 +6,15 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDividerModule } from '@angular/material/divider';
-import { MatCardModule } from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { CardGridComponent } from './components/card-grid/card-grid.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MatToolbarModule, MatSidenavModule, MatButtonModule,
-    MatIconModule,
-    MatDividerModule, MatCardModule, MatGridListModule, ],
+  imports: [CommonModule, RouterOutlet,
+    MatToolbarModule, MatSidenavModule,
+    MatButtonModule, MatIconModule,
+    MatDividerModule, CardGridComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
