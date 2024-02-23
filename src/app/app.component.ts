@@ -9,13 +9,14 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCardModule } from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MediaMatcher} from '@angular/cdk/layout';
+import { DataTableContractSchemaComponent } from './components/data-table-contract-schema/data-table-contract-schema.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, MatToolbarModule, MatSidenavModule, MatButtonModule,
     MatIconModule,
-    MatDividerModule, MatCardModule, MatGridListModule, ],
+    MatDividerModule, MatCardModule, MatGridListModule, DataTableContractSchemaComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
