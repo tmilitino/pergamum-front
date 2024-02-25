@@ -11,7 +11,7 @@ import { catchError, map, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ContractSchemaService  {
-  private contractSchemaUrl = 'ContractSchema1/';  // URL to web api
+  private contractSchemaUrl = 'http://127.0.0.1:8000/ContractSchema/';  // URL to web api
 
   constructor(private http: HttpClient,) { }
 
