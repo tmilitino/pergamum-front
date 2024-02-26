@@ -4,18 +4,22 @@ import { MatTableModule } from '@angular/material/table';
 import { ContractSchema } from './../../interfaces/contract-schema';
 import { ContractSchemaService } from '../../service/contract-schema.service'
 import { Location } from '@angular/common';
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';  
 
 
 @Component({
   selector: 'app-data-table-contract-schema',
   standalone: true,
-  imports: [MatTableModule],
+  imports: [MatTableModule, MatButtonModule, MatDividerModule, MatIconModule, MatSlideToggleModule],
   templateUrl: './data-table-contract-schema.component.html',
   styleUrls: ['./data-table-contract-schema.component.scss']
 })
 export class DataTableContractSchemaComponent implements OnInit {
   contractSchema: ContractSchema[] = [];
-  displayedColumns: string[] = ['id', 'name', 'schema_version', 'create_at', 'update_at', ];
+  displayedColumns: string[] = ['id', 'name', 'schema_version', 'create_at', 'update_at', 'actions'];
   
   constructor(
     private route: ActivatedRoute,
@@ -31,6 +35,5 @@ export class DataTableContractSchemaComponent implements OnInit {
     const id = parseInt(this.route.snapshot.paramMap.get('id1')!, 10);
     this.contractSchemaService.getContractSchemas()
       .subscribe(contractSchemas => this.contractSchema = contractSchemas);
-      console.log(this.contractSchema)
   }
 }
