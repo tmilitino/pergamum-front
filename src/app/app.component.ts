@@ -8,7 +8,11 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MediaMatcher } from '@angular/cdk/layout';
 import { DataTableContractSchemaComponent } from './components/data-table-contract-schema/data-table-contract-schema.component'
+import { ContractSchemaEditComponent } from './components/contract-schema-edit/contract-schema-edit.component'
+import { MenuContentComponent } from './components/menu-content/menu-content.component'
+import { SettingsContentComponent } from './components/settings-content/settings-content.component'
 import { HttpClientModule } from '@angular/common/http'
+import { MatDividerModule } from '@angular/material/divider';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +21,9 @@ import { HttpClientModule } from '@angular/common/http'
     CommonModule, RouterOutlet, MatToolbarModule,
     MatSidenavModule, MatButtonModule, MatIconModule,
     MatCardModule, DataTableContractSchemaComponent,
-    RouterLink, RouterLinkActive, HttpClientModule,
+    ContractSchemaEditComponent, RouterLink, 
+    RouterLinkActive, HttpClientModule, MatDividerModule,
+    MenuContentComponent, SettingsContentComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -36,5 +42,6 @@ export class AppComponent implements OnDestroy {
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
+
 
 }

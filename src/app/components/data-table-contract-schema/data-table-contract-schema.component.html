@@ -37,16 +37,15 @@
   <ng-container matColumnDef="actions">
     <th md-header-cell *matHeaderCellDef> Actions </th>
     <td md-cell *matCellDef="let row">
-      <button mat-icon-button>
-        <a routerLink="/contract-schema-edit" routerLinkActive="active" ariaCurrentWhenActive="page"></a>
+      <a class="button" mat-icon-button routerLink="/contract-schema-edit" routerLinkActive="active" ariaCurrentWhenActive="page">
         <mat-icon>create</mat-icon>
-      </button>
+      </a> | 
       <button mat-icon-button>
         <mat-icon>delete</mat-icon>
-      </button>
+      </button> | 
       <button mat-icon-button>
         <mat-icon>add</mat-icon>
-      </button>
+      </button> | 
       <mat-slide-toggle primary>
       </mat-slide-toggle>
     </td>

@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { ContractSchema } from './../../interfaces/contract-schema';
 import { ContractSchemaService } from '../../service/contract-schema.service'
@@ -8,12 +8,14 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';  
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-data-table-contract-schema',
   standalone: true,
-  imports: [MatTableModule, MatButtonModule, MatDividerModule, MatIconModule, MatSlideToggleModule],
+  imports: [MatTableModule, MatButtonModule, MatDividerModule, MatIconModule, MatSlideToggleModule, RouterLink,
+    RouterOutlet],
   templateUrl: './data-table-contract-schema.component.html',
   styleUrls: ['./data-table-contract-schema.component.scss']
 })
