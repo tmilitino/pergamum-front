@@ -1,34 +1,16 @@
-
 <mat-toolbar class="mat-elevation-z8">
     <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
     Pergamum Data Contract Manager
 </mat-toolbar>
 
 
-<mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav opened [mode]="mobileQuery.matches ? 'over' : 'side'"
-    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" #sidenav="matSidenav" class="mat-elevation-z8">
-        <button mat-button class="menu-button" routerLink="/home">
-            <mat-icon>home</mat-icon>
-            <span>Home</span>
-        </button>
-        <button mat-button class="menu-button" routerLink="/Contract_manager">
-            <mat-icon>library_books</mat-icon>
-            <span>Contract Manager</span>
-        </button>
-        <button mat-button class="menu-button" routerLink="/about">
-            <mat-icon>info</mat-icon>
-            <span>About</span>
-        </button>
-
-        <mat-divider></mat-divider>
-
-        <button mat-button class="menu-button" routerLink="/settings">
-            <mat-icon>settings</mat-icon>
-            <span>Settings</span>
-        </button>
+<mat-sidenav-container>
+    <mat-sidenav #snav opened [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+        fixedTopGap="56" #sidenav="matSidenav" class="mat-elevation-z8">
+        <app-menu-content></app-menu-content>
     </mat-sidenav>
     <mat-sidenav-content>
-        <app-data-table-contract-schema></app-data-table-contract-schema>
+        <router-outlet></router-outlet>
+        <!-- <app-data-table-contract-schema></app-data-table-contract-schema> -->
     </mat-sidenav-content>
 </mat-sidenav-container>
