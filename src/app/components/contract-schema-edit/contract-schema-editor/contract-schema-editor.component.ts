@@ -1,26 +1,22 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { MetaSchma } from './meta_schema';
-import {ContractDetails} from './contract-details'
-import { ContractSchemaFormComponent } from "./contract-schema-form/contract-schema-form.component";
-import { ContractSchemaExempleComponent } from "./contract-schema-exemple/contract-schema-exemple.component";
-import { ContractSchemaEditorComponent } from "./contract-schema-editor/contract-schema-editor.component";
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { MetaSchma } from '../meta_schema';
+
 
 declare var JSONEditor: any; // Declare a variável global JSONEditor
 
 
 @Component({
-  selector: 'app-contract-schema-edit',
+  selector: 'app-contract-schema-editor',
   standalone: true,
-  imports: [ReactiveFormsModule, ContractSchemaFormComponent, ContractSchemaExempleComponent, ContractSchemaEditorComponent],
-  templateUrl: './contract-schema-edit.component.html',
-  styleUrl: './contract-schema-edit.component.scss'
+  imports: [],
+  templateUrl: './contract-schema-editor.component.html',
+  styleUrl: './contract-schema-editor.component.scss'
 })
-export class ContractSchemaEditComponent implements OnInit,  AfterViewInit {
+export class ContractSchemaEditorComponent implements OnInit,  AfterViewInit {
   private editor: any;
 
   ngOnInit() {
-    // Verifique se o JSON Editor está 
+    // Verifique se o JSON Editor está disponível
     if (typeof JSONEditor !== 'undefined') {
       const schema = new MetaSchma().getSchema()
     
@@ -58,4 +54,5 @@ export class ContractSchemaEditComponent implements OnInit,  AfterViewInit {
     let formattedDate = `${year}-${month}-${dayOfMonth} ${hour}:${minutes}:${seconds} `;
     return formattedDate
   }
+
 }
