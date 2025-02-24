@@ -1,3 +1,5 @@
+import { type } from "os"
+
 export class MetaSchma {
 
     getSchema() {
@@ -9,7 +11,7 @@ export class MetaSchma {
                 'disable_edit_json': true,
                 'disable_properties': true,
             },
-            "$ref": "#/definitions/schema",
+            "$ref": "#/definitions/schema", 
             "properties": {
                 "definitions": {
                     "type": "object",
@@ -55,6 +57,9 @@ export class MetaSchma {
     getStringDefinition() {
         const stringDefinition =
         {
+            'options': {
+                'disable_edit_json': true,
+            },
             "properties": {
                 "pattern": {
                     "type": "string",
@@ -79,6 +84,9 @@ export class MetaSchma {
 
     getIntegerDefinition() {
         const integerDefinition = {
+            'options': {
+                'disable_edit_json': true,
+            },
             "properties": {
                 "default": {
                     "type": "integer"
@@ -109,86 +117,30 @@ export class MetaSchma {
 
     getObjectDefinition() {
         const objectDefinition = {
+            'options': {
+                'disable_edit_json': true,
+            },
             "defaultProperties": [
-                'title',
                 "properties"
             ],
             "properties": {
-                "options": {
-                    "properties": {
-                        "collapsed": {
-                            "type": "boolean"
-                        },
-                        "disable_collapse": {
-                            "type": "boolean"
-                        },
-                        "disable_edit_json": {
-                            "type": "boolean"
-                        },
-                        "disable_properties": {
-                            "type": "boolean"
-                        },
-                        "remove_empty_properties": {
-                            "type": "boolean"
-                        },
-                        "layout": {
-                            "type": "string",
-                            "enum": [
-                                "grid"
-                            ]
-                        }
-                    }
-                },
                 "type": {
                     "enum": [
                         "object"
                     ]
                 },
-                "default": {
-                    "type": "object"
-                },
+        
                 "properties": {
                     "type": "object",
+                    'options': {
+                        'disable_edit_json': true,
+                    },
                     "patternProperties": {
                         ".*": {
                             "$ref": "#/definitions/schema"
                         }
                     }
                 },
-                "patternProperties": {
-                    "type": "object",
-                    "patternProperties": {
-                        ".*": {
-                            "$ref": "#/definitions/schema"
-                        }
-                    }
-                },
-                "dependentSchemas": {
-                    "type": "object",
-                    "patternProperties": {
-                        ".*": {
-                            "$ref": "#/definitions/schema"
-                        }
-                    }
-                },
-                "additionalProperties": {
-                    "type": "boolean"
-                },
-                "required": {
-                    "type": "array",
-                    "uniqueItems": true,
-                    "format": "table",
-                    "items": {
-                        "type": "string",
-                        "title": "property"
-                    }
-                },
-                "format": {
-                    "type": "string",
-                    "enum": [
-                        "grid"
-                    ]
-                }
             }
         }
 
@@ -197,45 +149,19 @@ export class MetaSchma {
 
     getArryDefinition() {
         const arryDefinition = {
+            'options': {
+                'disable_edit_json': true,
+            },
             "defaultProperties": [
-                'title',
                 "items"
             ],
             "format": "tabs",
             "properties": {
-                "options": {
-                    "properties": {
-                        "collapsed": {
-                            "type": "boolean"
-                        },
-                        "disable_array_add": {
-                            "type": "boolean"
-                        },
-                        "disable_array_delete": {
-                            "type": "boolean"
-                        },
-                        "disable_array_delete_all_rows": {
-                            "type": "boolean"
-                        },
-                        "disable_array_delete_last_row": {
-                            "type": "boolean"
-                        },
-                        "disable_array_reorder": {
-                            "type": "boolean"
-                        },
-                        "disable_collapse": {
-                            "type": "boolean"
-                        }
-                    }
-                },
+                
                 "type": {
                     "enum": [
                         "array"
                     ]
-                },
-                "default": {
-                    "type": "array",
-                    "format": "tabs"
                 },
                 "items": {
                     "oneOf": [
@@ -248,31 +174,6 @@ export class MetaSchma {
                             "$ref": "#/definitions/schema",
                         },
                     ]
-                },
-                "uniqueItems": {
-                    "type": "boolean"
-                },
-                "minItems": {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                "maxItems": {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                "contains": {
-                    "$ref": "#/definitions/schema"
-                },
-                "minContains": {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                "maxContains": {
-                    "type": "integer",
-                    "minimum": 1
-                },
-                "additionalItems": {
-                    "$ref": "#/definitions/schema"
                 },
             }
         }
@@ -307,9 +208,14 @@ export class MetaSchma {
                     "type": "array",
                     "minItems": 1,
                     "uniqueItems": true,
-                    "propertyOrder": 50,
+                    "propertyOrder": 5,
                     "format": "table"
                 },
+                "required":{
+                    "type":"boolean",
+                    default:true,
+                    "propertyOrder": 6,
+                }
             }
         }
 

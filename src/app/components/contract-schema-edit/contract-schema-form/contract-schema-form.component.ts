@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import {ContractDetails} from '../contract-details'
+import {ContractDetails} from '../utils/contract-details'
 
 
 

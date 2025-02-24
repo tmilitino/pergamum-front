@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MetaSchma } from './meta_schema';
-import { ContractDetails } from './contract-details'
+
 
 import { MatGridListModule } from '@angular/material/grid-list';
 

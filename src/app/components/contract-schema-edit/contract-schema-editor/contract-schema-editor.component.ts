@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { MetaSchma } from '../meta_schema';
+import { MetaSchma } from '../utils/meta_schema';
 
 
 declare var JSONEditor: any; // Declare a variável global JSONEditor
