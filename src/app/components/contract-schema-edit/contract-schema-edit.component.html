@@ -1,12 +1,19 @@
-<form id="form-create-schema">
-    
-    <input type="submit" class="btn btn-primary mt-4" value="Salvar">
-    <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a>
-    
-    <app-contract-schema-form></app-contract-schema-form>
-    
-    <app-contract-schema-editor></app-contract-schema-editor>
-    
-  </form>
+<div class="grid-container">
 
-  <app-contract-schema-exemple></app-contract-schema-exemple>
+    <div class="json-form-editor">
+        <form id="form-create-schema">
+
+            <input type="submit" class="btn btn-primary mt-4" value="Salvar">
+            <a href="#" class="btn btn-secondary mt-4 ml-2">Cancelar</a>
+
+            <app-contract-schema-form></app-contract-schema-form>
+
+            <app-contract-schema-editor></app-contract-schema-editor>
+
+        </form>
+    </div>
+
+        <div class="schema-exemple">
+            <app-contract-schema-exemple></app-contract-schema-exemple>
+        </div>
+</div>

@@ -1,0 +1,55 @@
+// Variáveis de cores
+$primary-color: #225475;
+$secondary-color: #2ecc71;
+$background-color: #387ab4;
+$text-color: #dfebb3;
+$input-background: #1c6cf7;
+$border-color: #aac4ff;
+$button-color: #4caf50;
+$button-hover-color: #45a049;
+$header-color: #d35400;
+
+#json-editor {
+    background-color: $background-color;
+    padding: 20px;
+    border-radius: 8px;
+    color: #272525;
+    height: 100%;
+  
+    .je-object__key {
+      color: $text-color;
+      font-weight: bold;
+    }
+  
+    input[type="text"],
+    input[type="number"],
+    input[type="object"]
+    select {
+      background-color: $input-background;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+    }
+  
+    button {
+      background-color: $button-color;
+      color: rgb(219, 200, 200);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: $button-hover-color;
+      }
+    }
+  
+    .je-header {
+      color: $header-color;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+  }

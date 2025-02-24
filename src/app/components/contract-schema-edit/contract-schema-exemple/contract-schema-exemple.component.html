@@ -1,3 +1,12 @@
-<div id="exemplo-contract-schema">
-    <textarea class="form-control" rows="12" style="font-size: 12px; font-family:Roboto Mono;"></textarea>
-</div>
+<mat-card id="schema-sample-area">
+    <mat-card-header>
+        <h1 id="schema-title">
+
+            Schema Exemple
+        </h1>
+    </mat-card-header>
+    <mat-card-content>
+        <ngx-json-viewer [json]="data" [expanded]="false" [depth]="2"></ngx-json-viewer>
+
+    </mat-card-content>
+</mat-card>

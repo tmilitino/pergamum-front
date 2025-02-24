@@ -1,64 +1,16 @@
-// Variáveis de cores
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
-$background-color: #387ab4;
-$text-color: #dfebb3;
-$input-background: #1c6cf7;
-$border-color: #aac4ff;
-$button-color: #4caf50;
-$button-hover-color: #45a049;
-$header-color: #d35400;
-
-#form-create-schema{
-  width: 50%;
+.json-form-editor {
+  max-height: 100%;
+  overflow-y: auto;
+  /* Adiciona scroll vertical */
+  margin-left: 10px;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Duas colunas de largura igual */
-  gap: 10px; /* Espaçamento entre os componentes */
+  grid-template-columns: 1.5fr 1fr;
+  gap: 10px;
 }
 
-#json-editor {
-  background-color: $background-color;
-  padding: 20px;
-  border-radius: 8px;
-  color: #070705;
-
-  .je-object__key {
-    color: $text-color;
-    font-weight: bold;
-  }
-
-  input[type="text"],
-  input[type="number"],
-  input[type="object"]
-  select {
-    background-color: $input-background;
-    border: 1px solid $border-color;
-    border-radius: 4px;
-    padding: 8px;
-    width: 100%;
-    max-width: 300px;
-  }
-
-  button {
-    background-color: $button-color;
-    color: rgb(92, 49, 49);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: $button-hover-color;
-    }
-  }
-
-  .je-header {
-    color: $header-color;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
+.schema-exemple {
+  margin-right: 10px;
 }
